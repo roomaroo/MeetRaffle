@@ -10,8 +10,8 @@ namespace Raffle
     class Attendee
     {
         public string Name { get; set; }
-        public string UserId { get; set; }
         public string Title { get; set; }
+        public string Guests { get; set; }
     }
 
     class AttendeeMap : CsvClassMap<Attendee>
@@ -19,8 +19,8 @@ namespace Raffle
         public AttendeeMap()
         {
             Map(m => m.Name).Name("Name");
-            Map(m => m.UserId).Name("User ID");
             Map(m => m.Title).Name("Title");
+            Map(m => m.Guests).Name("Guests");
         }
     }
 }

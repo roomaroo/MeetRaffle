@@ -31,6 +31,27 @@ namespace Raffle
                 this.Attendees = csv.GetRecords<Attendee>()
                     .Where(a => string.IsNullOrEmpty(a.Title))
                     .ToList();
+                this.AddGuests();
+            }
+        }
+
+        private void AddGuests()
+        {
+            var attendeesWithGuests = this.Attendees.Where(a => !a.Guests.NullOrEmpty()).ToList();
+            foreach(var attendee in attendeesWithGuests)
+            {
+                var numberOfGuests = int.Parse(attendee.Guests.TrimStart('+'));
+                foreach (var i in Enumerable.Range(1, numberOfGuests))
+                {
+                    if (numberOfGuests > 1)
+                    {
+                        this.Attendees.Add(new Attendee { Name = $"{attendee.Name}'s guest {i}" });
+                    }
+                    else
+                    {
+                        this.Attendees.Add(new Attendee { Name = $"{attendee.Name}'s guest" });
+                    }
+                }
             }
         }
 

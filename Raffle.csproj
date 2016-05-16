@@ -61,6 +61,7 @@
     </ApplicationDefinition>
     <Compile Include="Attendee.cs" />
     <Compile Include="DrawInProgressToColorConverter.cs" />
+    <Compile Include="HandyExtensions.cs" />
     <Compile Include="Raffler.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

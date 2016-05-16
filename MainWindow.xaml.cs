@@ -37,7 +37,7 @@ namespace Raffle
         {
             if (!this.raffler.DrawInProgress)
             {
-                await this.raffler.StartDraw(TimeSpan.FromSeconds(3), TimeSpan.FromMilliseconds(70));
+                await this.raffler.StartDraw(TimeSpan.FromSeconds(2), TimeSpan.FromMilliseconds(70));
             }
         }
     }
