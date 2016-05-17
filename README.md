@@ -8,6 +8,6 @@ MeetRaffle is for you.
 MeetRaffle runs off the list of RSVPs that you can download from Meetup. To run it, just pass the path to the downloaded file on the 
 command line - i.e.
 
-MeetRaffle <path to downloaded attendee list>
+    MeetRaffle.exe <path to downloaded attendee list>
 
 Visual Studio 2015 is required to build. .Net 4.5.2 is required to run.
