@@ -10,11 +10,9 @@ using CsvHelper.Configuration;
 
 namespace MeetRaffle
 {
-    class Raffler : INotifyPropertyChanged
+    class Raffler : BindableBase
     {
         private Attendee selectedAttendee;
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public IList<Attendee> Attendees { get; private set; }
 
@@ -63,8 +61,7 @@ namespace MeetRaffle
             }
             set
             {
-                this.selectedAttendee = value;
-                this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedAttendee)));
+                this.SetProperty(ref selectedAttendee, value);
             }
         }
 
@@ -85,15 +82,14 @@ namespace MeetRaffle
             this.DrawInProgress = false;
         }
 
-        private bool drawInProgree;
+        private bool drawInProgress;
 
         public bool DrawInProgress
         {
-            get { return drawInProgree; }
+            get { return drawInProgress; }
             set
             {
-                drawInProgree = value;
-                this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DrawInProgress)));
+                this.SetProperty(ref drawInProgress, value);
             }
         }
 

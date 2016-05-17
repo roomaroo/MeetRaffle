@@ -60,6 +60,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Attendee.cs" />
+    <Compile Include="BindableBase.cs" />
     <Compile Include="DrawInProgressToColorConverter.cs" />
     <Compile Include="HandyExtensions.cs" />
     <Compile Include="Raffler.cs" />
