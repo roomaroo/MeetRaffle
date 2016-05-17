@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using CsvHelper;
 using CsvHelper.Configuration;
 
-namespace Raffle
+namespace MeetRaffle
 {
     class Raffler : INotifyPropertyChanged
     {

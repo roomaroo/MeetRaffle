@@ -1,4 +1,4 @@
-﻿namespace Raffle
+﻿namespace MeetRaffle
 {
     static class HandyExtensions
     {

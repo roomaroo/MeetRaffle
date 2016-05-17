@@ -7,8 +7,8 @@
     <ProjectGuid>{8BC1C0B7-3EAC-4787-A550-6276F9CE327C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Raffle</RootNamespace>
-    <AssemblyName>Raffle</AssemblyName>
+    <RootNamespace>MeetRaffle</RootNamespace>
+    <AssemblyName>MeetRaffle</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
