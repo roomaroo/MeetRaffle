@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Threading.Tasks;
 using CsvHelper;
 using CsvHelper.Configuration;
@@ -65,10 +66,11 @@ namespace MeetRaffle
             }
         }
 
-        public async Task StartDraw(TimeSpan duration, TimeSpan drawInterval)
+        public async Task StartDraw(TimeSpan duration, TimeSpan drawInterval, Stream audioStream)
         {
             var stopwatch = new Stopwatch();
             var random = new Random();
+            new SoundPlayer(audioStream).Play();
 
             this.DrawInProgress = true;
             stopwatch.Start();
