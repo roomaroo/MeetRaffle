@@ -26,7 +26,7 @@ namespace MeetRaffle
         {
             if (!this.raffler.DrawInProgress)
             {
-                await this.raffler.StartDraw(TimeSpan.FromSeconds(2), TimeSpan.FromMilliseconds(70));
+                await this.raffler.StartDraw(TimeSpan.FromSeconds(4), TimeSpan.FromMilliseconds(70), Properties.Resources.DrumRoll);
             }
         }
     }
