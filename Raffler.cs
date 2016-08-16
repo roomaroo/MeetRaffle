@@ -23,7 +23,7 @@ namespace MeetRaffle
             {
                 var csv = new CsvReader(reader, new CsvConfiguration {
                     HasHeaderRecord = true,
-                    Delimiter ="\t",
+                    Delimiter =","
                 });
                 csv.Configuration.RegisterClassMap<AttendeeMap>();
 
