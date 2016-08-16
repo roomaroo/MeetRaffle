@@ -19,11 +19,13 @@ namespace MeetRaffle
 
         public void LoadNames(FileInfo attendeeList)
         {
+            var delimiter = this.GetDelimiter(attendeeList);
+
             using (var reader = attendeeList.OpenText())
             {
                 var csv = new CsvReader(reader, new CsvConfiguration {
                     HasHeaderRecord = true,
-                    Delimiter =","
+                    Delimiter = delimiter
                 });
                 csv.Configuration.RegisterClassMap<AttendeeMap>();
 
@@ -31,6 +33,25 @@ namespace MeetRaffle
                     .Where(a => string.IsNullOrEmpty(a.Title))
                     .ToList();
                 this.AddGuests();
+            }
+        }
+
+        /// <summary>
+        /// Meetup seem to vary the format of their attendee list between tab-delimited
+        /// and comma-delimited.
+        /// This method looks at the first line of the file to work out what delimiter is being used.
+        /// </summary>
+        /// <param name="attendeeList">The attendee list file</param>
+        /// <returns>The delimiter</returns>
+        private string GetDelimiter(FileInfo attendeeList)
+        {
+            using (var reader = new StreamReader(attendeeList.OpenRead()))
+            {
+                var firstLine = reader.ReadLine();
+                var commaCount = firstLine.Count(c => c == ',');
+                var tabCount = firstLine.Count(c => c == '\t');
+
+                return tabCount > commaCount ? "\t" : ",";
             }
         }
 
